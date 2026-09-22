@@ -104,6 +104,19 @@ fn main() {
     let height = 1.8;
     let bmi = calculate_bmi(weight, height);
     println!("Your BMI is {:.2}", bmi);
+
+    // OWNERSHIP
+
+    // Each value in Rust has an owner.
+    let s1 = String::from("RUST");
+    let len = calculate_length(&s1);
+    println!("\nLength of '{}' is {}.", s1, len);
+
+    // There is only one owner of a value at a given time.
+    let s2 = s1;
+    // println!("{}", s1); // compile error
+
+    // When the owner goes out of spoce, the value will be dropped.
 }
 
 // Rust auto-cleans memory allocated to any variable at the end of a function.
@@ -135,4 +148,8 @@ fn add(a: i32, b: i32) -> i32 {
 
 fn calculate_bmi(weight_kg: f64, height_m: f64) -> f64 {
     weight_kg / (height_m * height_m)
+}
+
+fn calculate_length(s:&String) -> usize {
+    s.len()
 }
