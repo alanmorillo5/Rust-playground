@@ -117,6 +117,29 @@ fn main() {
     // println!("{}", s1); // compile error
 
     // When the owner goes out of spoce, the value will be dropped.
+
+    // REFERENCES AND BORROWING
+    
+    // References borrow values without taking ownership using &. Can be immutable or mutable.
+    let mut x = 5;
+    let r = &mut x;
+
+    *r += 1;
+    *r -= 3;
+
+    println!("\nValues of x: {}\n", x);
+
+    let mut account = BankAccount {
+        owner: "Alan".to_string(),
+        balance: 150.55,
+    };
+    // Immutable borrow to check the balance
+    account.check_balance();
+    // Mutable borrow to withdraw money
+    account.withdraw(45.5);
+    account.check_balance();
+
+    // VARIABLES AND MUTABILITY
 }
 
 // Rust auto-cleans memory allocated to any variable at the end of a function.
@@ -152,4 +175,23 @@ fn calculate_bmi(weight_kg: f64, height_m: f64) -> f64 {
 
 fn calculate_length(s:&String) -> usize {
     s.len()
+}
+
+// struct - a data structure that allows you to group multiple fields together under one name.
+struct BankAccount {
+    owner: String,
+    balance: f64,
+}
+
+// impl - attaches methods and functions for a struct or enum.
+impl BankAccount {
+    
+    fn withdraw(&mut self, amt: f64) {
+        println!("Withdrawing {} from account owned by {}.", amt, self.owner);
+        self.balance -= amt;
+    }
+
+    fn check_balance(&self) {
+        println!("Account owned by {} has a balance of {:.2}.", self.owner, self.balance);
+    }
 }
