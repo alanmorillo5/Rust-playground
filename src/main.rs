@@ -144,6 +144,15 @@ fn main() {
     println!("\nThe value of a is {}.", a);
     a = 10;
     println!("The value of a is {}.", a);
+
+    // CONSTANTS
+
+    // UPPER_SNAKE_CASE, must explicitly declare type
+    const Y: i32 = 10;
+    println!("\nThe value of Y is: {}", Y);
+
+    println!("The value of PI is: {}", PI);
+    println!("Three hours in seconds: {}", THREE_HOURS_IN_SECONDS);
 }
 
 // Rust auto-cleans memory allocated to any variable at the end of a function.
@@ -199,3 +208,7 @@ impl BankAccount {
         println!("Account owned by {} has a balance of {:.2}.", self.owner, self.balance);
     }
 }
+
+// Can declare const in any scope
+const PI: f64 = 3.141592653;
+const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
