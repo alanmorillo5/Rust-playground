@@ -140,6 +140,10 @@ fn main() {
     account.check_balance();
 
     // VARIABLES AND MUTABILITY
+    let mut a = 5;
+    println!("\nThe value of a is {}.", a);
+    a = 10;
+    println!("The value of a is {}.", a);
 }
 
 // Rust auto-cleans memory allocated to any variable at the end of a function.
