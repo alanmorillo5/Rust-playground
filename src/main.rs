@@ -167,6 +167,17 @@ fn main() {
     }
     // These changes never escape the scope
     println!("The value of x is {}", x);
+
+    // COMMENTS
+
+    // this is for printing "hello, world"
+    println!("Hello, World!") // this is for printing "Hello, World!"
+    /*
+    This is a block comment.
+    multiple lines can go here.
+    */
+
+
 }
 
 // Rust auto-cleans memory allocated to any variable at the end of a function.
