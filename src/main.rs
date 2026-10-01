@@ -1,6 +1,8 @@
 // run "cargo new _" to create project
 // run "cargo run" to compile and run project
 
+use std::collections::HashMap;
+
 
 // main() is the project's entry point.
 fn main() {
@@ -270,7 +272,7 @@ fn main() {
     };
 
     user1.email = String::from("another.email.com");
-    println!("\nUser email is {}.", user1.email);
+    println!("\nUser email is {}.\n", user1.email);
 
     fn build_user(email: String, username: String) -> User {
         User{
@@ -334,6 +336,102 @@ fn main() {
 
     let home = IpAddr::V4(127, 0, 0, 1);
     let loopback = IpAddr::V6(String::from("::1"));
+
+    // ERROR HANDLING
+    
+    /*
+    option 1:  OPTION
+    enum Option<T> { // define generic Option type
+        Some(T), // Represents a value
+        None // Represents absence of a value
+    }
+
+    approach 2: RESULT
+    enum Result<T, E> { // define generic Result type
+        Ok(T), // Represents a value
+        Err(E) // Represents an error
+    }
+    */
+
+    fn divide_option(numerator: f64, denominator: f64) -> Option<f64> {
+        if denominator == 0.0 {
+            None
+        } else {
+            Some(numerator / denominator)
+        }
+    }
+
+    let result = divide_option(1.0, 0.0);
+    match result {
+        Some(x) => println!("Result: {}", x),
+        None => println!("Cannot divide by zero.")
+    }
+
+    fn divide_result(numerator: f64, denominator: f64) -> Result<f64, String> {
+
+        if denominator == 0.0 {
+            Err("Cannot divide by zero.".to_string())
+        } else {
+            Ok(numerator / denominator)
+        }
+    }
+
+    match divide_result(100.0, 0.0) {
+        Ok(result) => println!("Result: {}", result),
+        Err(err) => println!("Error: {}", err)
+    };
+
+    // COLLECTIONS
+
+    // 1. VECTORS
+    let v: Vec<i32> = Vec::new();
+    let v = vec![1, 2, 3, 4];
+
+    let mut v: Vec<i32> = Vec::new();
+    v.push(5);
+    v.push(6);
+    v.push(7);
+    v.push(11);
+    println!("\n{:?}", v);
+    
+    let third: &i32 = &v[2]; // Direct indexing
+    println!("The third element is {}", third);
+
+    let third = v.get(2);
+    match third {
+        Some(third) => println!("The third element is {}", third),
+        None => println!("There is no third element.")
+    }
+
+    // UTF-8
+    let s = "whatever".to_string();
+    let s = String::from("whatever");
+    let mut s = String::from("foo");
+    s.push_str("bar");
+    s.push('!');
+    println!("\nValue of s: {}", s);
+
+    // Can also concatenate Strings using +
+    let s1 = String::from("Hello, ");
+    let s2 = String::from("world!");
+    let s3 = s1 + &s2; // s1 has been moved and can no longer be used.
+    println!("Value of s3 using +: {}", s3);
+
+    let s3 = format!("{} {}", "Hello,".to_string(), "world!".to_string());
+    println!("Value of s3 using format: {s3}");
+
+    // HASH MAPS
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
+
+    let team_name = String::from("Blue");
+    let score = scores.get(&team_name).copied().unwrap_or(0);
+
+    for (key, value) in &scores {
+        println!("{key}, {value}");
+    }
 }
 
 // Rust auto-cleans memory allocated to any variable at the end of a function.
