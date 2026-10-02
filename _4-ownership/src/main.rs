@@ -7,7 +7,7 @@ fn main() {
     println!("Length of '{}' is {}.", s1, len);
 
     // There is only one owner of a value at a given time.
-    let s2 = s1;
+    let _s2 = s1;
     // println!("{}", s1); // compile error
 
     // When the owner goes out of scope, the value will be dropped.

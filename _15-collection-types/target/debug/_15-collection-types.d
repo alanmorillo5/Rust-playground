@@ -1,1 +1,0 @@
-/Users/alanmorillo/Projects/Rust/rust-hello/helloProject/_15-collection-types/target/debug/_15-collection-types: /Users/alanmorillo/Projects/Rust/rust-hello/helloProject/_15-collection-types/src/main.rs
