@@ -1,0 +1,1 @@
+/Users/alanmorillo/Projects/Rust/rust-hello/helloProject/_12-defining-structs/target/debug/_12-defining-structs: /Users/alanmorillo/Projects/Rust/rust-hello/helloProject/_12-defining-structs/src/main.rs

@@ -1,0 +1,1 @@
+/Users/alanmorillo/Projects/Rust/rust-hello/helloProject/_1-primitive-data-types/target/debug/_1-primitive-data-types: /Users/alanmorillo/Projects/Rust/rust-hello/helloProject/_1-primitive-data-types/src/main.rs

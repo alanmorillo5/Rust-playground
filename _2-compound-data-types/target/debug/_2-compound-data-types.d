@@ -1,0 +1,1 @@
+/Users/alanmorillo/Projects/Rust/rust-hello/helloProject/_2-compound-data-types/target/debug/_2-compound-data-types: /Users/alanmorillo/Projects/Rust/rust-hello/helloProject/_2-compound-data-types/src/main.rs

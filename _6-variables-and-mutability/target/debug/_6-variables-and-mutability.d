@@ -1,0 +1,1 @@
+/Users/alanmorillo/Projects/Rust/rust-hello/helloProject/_6-variables-and-mutability/target/debug/_6-variables-and-mutability: /Users/alanmorillo/Projects/Rust/rust-hello/helloProject/_6-variables-and-mutability/src/main.rs
